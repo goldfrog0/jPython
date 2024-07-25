@@ -18,9 +18,16 @@ def show_response_info(response: Response) -> None:
 
 
 def main() -> None:
-    website: str = "https://www.indently.io/abc"
-    response: Response = get_response(website)
-    show_response_info(response)
+    while True:
+         try:
+             website: str = input("Website url: ")
+             response: Response = get_response(website)
+             show_response_info(response)
+             break
+
+         except:
+             print("Invalid Website url, try again.")
+
 
 if __name__ == "__main__":
     main()
